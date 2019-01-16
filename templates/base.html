@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Django{% endblock %}</title>
+    <link rel="icon" href="{% static 'favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+</head>
+<body>
+    <header>
+        <div class="flex">
+            <h1><a href="/">tix released</a></h1>
+            <div>
+                {% if user.is_authenticated %}
+                <p>Hi {{ user.username }}! <a href="{% url 'logout' %}">logout</a></p>
+                {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.configure({useBR: true});
+    </script>
+</body>
+</html>

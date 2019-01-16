@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Event List{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'event-create' %}">Create a new one</a>
+<table>
+    <thead>
+        <th>code</th>
+        <th>status</th>
+        <th>owned by</th>
+    </thead>
+    <tbody>
+    {% for event in object_list %}
+        <tr>
+            <td><a href="{% url 'event-detail' pk=event.id %}">{{ event.code }}</a></td>
+            <td>{{ event.status }}</td>
+            <td>{{ event.user }}</td>
+        </tr>
+    {% empty %}
+        <tr>
+            <td>No events</td>
+        </tr>>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

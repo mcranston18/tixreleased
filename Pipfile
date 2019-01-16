@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+python-dotenv = "*"
+ipdb = "*"
+"psycopg2" = "*"
+"psycopg2-binary" = "*"
+requests = "*"
+pylint = "*"
+"pep8" = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
+model-mommy = "*"
+pytest = "*"
+djangorestframework-guardian = "*"
+djangorestframework-simplejwt = "*"
+pytest-django = "*"
+black = "*"
+pre-commit = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

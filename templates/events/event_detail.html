@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load extras %}
+
+{% block title %}Event Detail{% endblock %}
+
+{% block content %}
+
+<h1>Event {{ object.code }}</h1>
+
+<table>
+    <thead>
+        <th>created</th>
+        <th>status</th>
+        <th>response</th>
+    </thead>
+    <tbody>
+    {% for history in event_history %}
+        <tr>
+            <td>{{ history.created }}</td>
+            <td>{{ history.status }}</td>
+            <td>
+                <pre><code class="json">{{ history.response }}</code></pre>
+            </td>
+        </tr>
+    {% empty %}
+        <tr>
+            <td>No history</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

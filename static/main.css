@@ -1,0 +1,163 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+:root {
+    --spacing: 10px;
+    --spacing-xs: 5px;
+    --spacing-m: 20px;
+    --spacing-l: 30px;
+    --wrapper-size: 1024px;
+}
+
+
+main {
+    width: var(--wrapper-size);
+    margin: auto;
+    padding: 24px 0;
+}
+
+/* grid  */
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-l) 0;
+}
+
+/* header  */
+
+header {
+    background: linear-gradient(to left, #28a5f5, #1e87f0);
+    font-size: 14px;
+    color: white;
+}
+
+header h1 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+header > div {
+    width: var(--wrapper-size);
+    margin: auto;
+}
+
+header a {
+    color: #f1f1f1;
+    margin-left: var(--spacing-m);
+}
+
+header a:hover {
+    color: #efefef;
+}
+
+/* forms  */
+
+form {
+    width: 50%;
+}
+
+input, textarea {
+    height: 40px;
+    vertical-align: middle;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
+    padding: 0 var(--spacing);
+    background: #fff;
+    color: #666;
+    border: 1px solid #e5e5e5;
+    transition: .2s ease-in-out;
+    transition-property: color,background-color,border;
+}
+
+label {
+    display: block;
+    color: #222;
+    font-size: 14px;
+    margin-bottom: var(--spacing-xs);
+}
+
+button {
+    margin: 0;
+    border: none;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 30px;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color,border-color;
+    background-color: transparent;
+    color: #222;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+button:hover {
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+}
+
+form input {
+    margin-bottom: var(--spacing-m)
+}
+
+.errorlist {
+    margin: 0;
+    margin-bottom: var(--spacing-m);
+    padding: 0;
+}
+
+.errorlist li {
+    list-style-type: none;
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+
+/* table  */
+
+table {
+    text-align: left;
+}
+
+table td, table th {
+    padding: var(--spacing);
+}
+
+table tr {
+    border-top: 1px solid #ddd;
+}
