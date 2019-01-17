@@ -7,6 +7,7 @@ from .ticket_finder import TicketFinder
 
 
 class EventHistory(BaseModel):
+
     SUCCESS = "success"
     ERROR = "error"
     STATUS_CHOICES = ((SUCCESS, "success"), (ERROR, "error"))
@@ -16,6 +17,9 @@ class EventHistory(BaseModel):
     event = models.ForeignKey(
         "events.Event", on_delete=models.CASCADE, related_name="event_history"
     )
+
+    def __str__(self):
+        return f'{self.event.code} ({self.created.strftime("%d %b %y %H:%M")})'
 
 
 class Event(BaseModel):
